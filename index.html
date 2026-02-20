@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra Pro Image Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Ultra Professional Gallery</h1>
+
+  <input
+    class="search-box"
+    placeholder="Search images..."
+    oninput="searchImages(this.value)"
+  >
+
+  <div class="filters">
+    <button class="active" onclick="filterGallery('all', event)">All</button>
+    <button onclick="filterGallery('nature', event)">Nature</button>
+    <button onclick="filterGallery('city', event)">City</button>
+    <button onclick="filterGallery('animals', event)">Animals</button>
+  </div>
+</header>
+
+<!-- GALLERY -->
+<div class="gallery" id="gallery"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">✕</span>
+  <span class="nav prev" onclick="changeSlide(-1)">❮</span>
+  <img id="lightboxImg">
+  <span class="nav next" onclick="changeSlide(1)">❯</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
